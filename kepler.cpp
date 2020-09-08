@@ -2,7 +2,6 @@
 #include <math.h>
 
 #include "kepler.h"
-// #include <iostream> // for test
 
 static const double sqrt_G = 6.708e-8; // for M in Msun, a in pc, freq in year**-1 (time in year)
 
@@ -68,8 +67,4 @@ void StellarBinary::update(double t // time in years elapsed
     r_2[0] = -(semi_major_axis_2*costheta - eccentricity*semi_major_axis_2);
     r_2[1] = -(semi_minor_axis_2*sintheta);
     
-//     std::cout << mean_anomaly << " ";
-//     std::cout << semi_major_axis_1*cos(theta) - eccentricity*semi_major_axis_1 <<  " " << semi_minor_axis_1*sin(theta) <<  " " << rad_1 << " ";
-//     std::cout << -(semi_major_axis_2*cos(theta) - eccentricity*semi_major_axis_2) <<  " " << -(semi_minor_axis_2*sin(theta)) <<  " " << rad_2 << " ";
-//     std::cout << std::endl;
 }

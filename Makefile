@@ -1,2 +1,2 @@
-ellipse: kepler.cpp ellipse.cpp
-	g++ -o test -O3 kepler.cpp ellipse.cpp -std=c++14
+ellipse: kepler.cpp test.cpp
+	g++ -o test -O3 kepler.cpp test.cpp -std=c++14
