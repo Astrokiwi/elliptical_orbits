@@ -34,16 +34,15 @@ double StellarBinary::eccentric_anomaly(
                          double mean_anomaly
                          ) {
     double cosE;
-    double guess;
-    double oldguess = M_PI;
+    double guess = M_PI;
+    double oldguess;
     
     do {
         oldguess=guess;
         cosE = cos(oldguess);
         guess = (mean_anomaly - eccentricity * (oldguess*cosE - sin(oldguess)))
                 /(1 - eccentricity*cosE);
-//         std::cout << guess << std::endl;
-    } while (fabs((oldguess-guess)/guess)>convergence_critera);
+   } while (fabs((oldguess-guess)/guess)>convergence_critera);
     
     
     return guess;
